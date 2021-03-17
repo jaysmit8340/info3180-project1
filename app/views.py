@@ -5,10 +5,12 @@ Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
 
-from app import app
+from app import app, db
 from flask import render_template, request, redirect, url_for,flash
+from app.models import UserProperty
 from app.forms import PropertyForm
 from werkzeug.utils import secure_filename
+import os
 
 ###
 # Routing for your application.
@@ -39,7 +41,10 @@ def property():
             pic=form.pic.data
             filename = secure_filename(pic.filename)
             pic.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-            flash("Profile successfully created", category="success")
+            user= UserProperty(title, desc, numOfBed, numOfBath, pric, proptype, filename, location, pic)
+            db.session.add(user)
+            db.session.commit()
+            flash("Property successfully created", category="success")
             return redirect(url_for('properties'))
     return render_template("property.html", form=form)
 
