@@ -3,7 +3,7 @@ from . import db
 
 class UserProperty(db.Model):
     
-    __tablename__ = 'user'
+    __tablename__ = 'user_property'
 
     id = db.Column(db.Integer, primary_key=True, unique=True)
     title = db.Column(db.String(80))
@@ -13,11 +13,11 @@ class UserProperty(db.Model):
     pric = db.Column(db.String(80))
     proptype = db.Column(db.String(29))
     location = db.Column(db.String(225))
-    pic=db.Column(db.String(225))
+    photo_name=db.Column(db.String(225), index=True)
     
     
     
-    def __init__(self, title, desc, numOfBed, numOfBath, pric, proptype, location, pic):
+    def __init__(self, title, desc, numOfBed, numOfBath, pric, proptype, location, photo_name):
         self.title = title
         self.desc = desc
         self.numOfBed = numOfBed
@@ -25,7 +25,7 @@ class UserProperty(db.Model):
         self.pric = pric
         self.proptype = proptype
         self.location = location
-        self.pic = pic
+        self.photo_name=photo_name
 
 
 

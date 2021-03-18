@@ -6,45 +6,64 @@
 <br>
 <form action="{{url_for('property')}}" method='POST' enctype = "multipart/form-data"> 
     {{ form.csrf_token }} 
-    <form class="row g-3">
-        <div class="col-12">
-            <label for="inputPropertytitle" class="form-label">Property Title</label>
-            <input type="text" class="form-control" id="inputPropertytitle" >
-          </div>
-          <div class="col-12">
-            <label for="inputDescription" class="form-label">Description</label>
-            <input type="text" class="form-control" id="inputDescription" >
-          </div>
-        <div class="col-md-6">
-          <label for="inputbedroom" class="form-label">No. of Rooms</label>
-          <input type="bedroom" class="form-control" id="inputbedroom" placeholder="3">
-        </div>
-        <div class="col-md-6">
-          <label for="inputbadroom" class="form-label">No. of Bathrooms</label>
-          <input type="bathroom" class="form-control" id="inputbathroom" placeholder="2">
-        </div>
-        <div class="col-md-6">
-            <label for="inputPrice" class="form-label">Price</label>
-            <input type="price" class="form-control" id="inputPrice" placeholder="15,000,000">
-          </div>
-          <div class="col-md-6">
-            <label for="inputPropertytype" class="form-label">Property Type</label>
-            <select id="inputPropertytype" class="form-control">
-              <option selected>House</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="inputLocation" class="form-label">Location</label>
-            <input type="location" class="form-control" id="inputLocation" placeholder="10 Waterloo Rd">
-          </div>
-       
-        <div class="col-md-4">
-          <label for="inputPhoto" class="form-label">Photo</label>
-          <input type="photo" class="form-control" id="inputPhoto">
-        </div>
-        <div class="col-12">
-     <button type="submit" name="submit" id="btn">Add Property</button> 
+    <form class="formc">
+        <div class="row">
+     <div class="col-8">
+         {{ form.title.label }} 
+         {{ form.title(class='form-control') }} 
+         
+     </div> 
+     <br>
+     
+
+     <div class="col-sm-8">
+         {{ form.desc.label }}
+         {{ form.desc(class='form-control') }}
+         
+         
+     </div> 
+    </div>
+    <br>
+     
+     <div class="row">
+     <div class="col-md-4">
+         {{ form.numOfBed.label }} 
+         {{ form.numOfBed(class='form-control',placeholder="3" )}}
+     </div> 
+     <br>
+     <div class="col-md-4">
+         {{ form.numOfBath.label }}
+         {{ form.numOfBath(class='form-control', placeholder="2") }}
+     </div> 
      </div>
+     <br>
+     <div class="row">
+     <div class="col-md-4">
+         {{ form.pric.label }} 
+         {{ form.pric(class='form-control', placeholder="15,000,000") }}
+     </div> 
+     <br>
+     <div class="col-md-4">
+         {{ form.proptype.label }}
+         {{ form.proptype( class='form-control', placeholder= "Select Type") }}
+     </div> 
+     </div>
+     <br>
+     <div class="row">
+     <div class="col-md-4">
+         {{ form.location.label }}
+         {{ form.location(class='form-control', placeholder = "10 Waterloo Road ") }}    
+     </div>
+     </div>  
+     <br>
+     <div class="row">
+     <div class="col-md-4">
+        {{ form.pic.label }}
+        {{ form.pic(class='form-control') }}    
+     </div>
+     </div>
+    <br> 
+
+     <button type="submit" name="submit" id="btn">Add Property</button> 
 </form>
     {% endblock %}

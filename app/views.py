@@ -10,6 +10,7 @@ from flask import render_template, request, redirect, url_for,flash
 from app.models import UserProperty
 from app.forms import PropertyForm
 from werkzeug.utils import secure_filename
+from flask import send_from_directory
 import os
 
 ###
@@ -41,17 +42,34 @@ def property():
             pic=form.pic.data
             filename = secure_filename(pic.filename)
             pic.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-            user= UserProperty(title, desc, numOfBed, numOfBath, pric, proptype, filename, location, pic)
-            db.session.add(user)
+            userproperty= UserProperty(title, desc, numOfBed, numOfBath, pric, proptype, location, filename)
+            db.session.add(userproperty)
             db.session.commit()
             flash("Property successfully created", category="success")
             return redirect(url_for('properties'))
     return render_template("property.html", form=form)
 
+def get_uploaded_images():
+    rootdir=os.getcwd()
+    lst=[]
+    print (rootdir)
+    for subdir, dirs, files in os.walk(rootdir + '/uploads'):
+        for file in files:
+          lst.append(file)
+    lst.pop(0)
+    return lst
+
+@app.route('/upload/<filename>')
+def get_image(filename):
+    root_dir=os.getcwd()
+    return send_from_directory(os.path.join(root_dir,app.config['UPLOAD_FOLDER']),filename)
+
+
 @app.route("/properties")
 def properties():
-    return render_template("properties.html")
-
+    users= db.session.query(UserProperty).all()
+    return render_template("properties.html", users= users )
+   
 
 
 
