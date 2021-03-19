@@ -71,7 +71,10 @@ def properties():
     return render_template("properties.html", users= users )
    
 
-
+@app.route('/property/<propertyid>')
+def user_pro(propertyid):
+    userpro= UserProperty.query.get(propertyid)
+    return render_template("userproperty.html", property= userpro)
 
 ###
 # The functions below should be applicable to all Flask apps.

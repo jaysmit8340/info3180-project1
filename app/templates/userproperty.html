@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+
+{% block main %}
+
+{% if not property == None%}
+<div class="pro">
+    <div class ="prob">
+    <img id="uimg" src="{{url_for('get_image',filename=user.photo_name)}}">
+    <h6>{{user.title}}</h6>
+            <div class="info">
+                <h4 class="name" >{{profile.fname}} {{profile.lname}}</h4>
+                <div class="icons">
+                <p ><img class="iconp" src="{{url_for('static', filename='email.png')}}"/>{{profile.email}}</p>
+                <p><img class="iconp" src="{{url_for('static', filename='location.png')}}"/> {{profile.location}}</p>
+                <p><img class="iconp" src="{{url_for('static', filename='date.png')}}"/> Joined on {{profile.date_joined.strftime("%B %d,%Y")}}</p>
+            </div>
+            </div>
+            </div>
+        <div class="bio">
+        <h5 >About Me</h5>
+        <p>{{profile.biography}}</p>
+            <button class="btn-s" type="submit">Send Message</button>
+            <button class="btn-f" type="submit">Follow</button>
+            </div>
+            </div>
+        {% endif %}
+{% endblock %}

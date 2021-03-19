@@ -6,24 +6,29 @@
 {% include "flash_messages.html"%}
 
 <br>
-
-    <div class="grid_layout1">
-        <div class="card">
+<ul class="images">
+<div class="grid_layout1">
+  
     
 {% for user in users %}
+<div class="card">
  
 
-<img src = "{{url_for('get_image',filename=user.photo_name)}}"></img>
+<li class ="grid_layout"><img class="img" src = "{{url_for('get_image',filename=user.photo_name)}}">
     <h6>{{user.title}}</h6>
     <h6>{{user.location}}</h6>
-    <h6>{{user.pric}}</h6>
+    <div class="prices">
+    {{user.pric}}
+    </div>
+    <br>
     <button type="button">View Property</button> 
 
         
             <br>
-            {%endfor %}
-  
-    </div>
 </div>
+            {%endfor %}
+    </ul>
+    </div>
+
 
 {% endblock%}

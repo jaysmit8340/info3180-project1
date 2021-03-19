@@ -5,17 +5,27 @@ button{
     background-color: blue;
     color: white;
     border-radius: 3px;
+    width: 100%;
 }
 
 
 
 .grid_layout1{
     display: grid;
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    padding: 10px;
-    margin-bottom: 100px;
-   
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    vertical-align: top;
 }
 
+.prices{
+    background-color: blue;
+    color: white;
+    border-radius: 15px;
+    max-width: max-content;
+    padding:4px;
+    
+}
+img{
+    
+    width: 100%;
+}
