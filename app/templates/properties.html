@@ -5,29 +5,36 @@
 <h1 class="heading">Properties</h1>
 {% include "flash_messages.html"%}
 
-<br>
-<ul class="images">
+
+
 <div class="grid_layout1">
   
     
-{% for user in users %}
+{% for user in property %}
 <div class="card">
  
 
-<li class ="grid_layout"><img class="img" src = "{{url_for('get_image',filename=user.photo_name)}}">
-    <h6>{{user.title}}</h6>
-    <h6>{{user.location}}</h6>
+<img class="img" src = "{{url_for('get_image',filename=user.photo_name)}}">
+    <div class ="card-title">
+    {{user.title}}
+    </div>
+    <div class="icons">
+    <p ><img class="iconp" src="{{url_for('static', filename='loc.png')}}"/>{{user.location}}</p>
+    </div>
     <div class="prices">
     {{user.pric}}
+    <br>
+    
     </div>
     <br>
-    <button type="button">View Property</button> 
+    <a href="{{ url_for('user_pro', propertyid=user.id) }}" class="viewbutton">View Property</a>
+    
 
         
-            <br>
+            
 </div>
             {%endfor %}
-    </ul>
+   
     </div>
 
 

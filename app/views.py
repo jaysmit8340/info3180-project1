@@ -68,13 +68,13 @@ def get_image(filename):
 @app.route("/properties")
 def properties():
     users= db.session.query(UserProperty).all()
-    return render_template("properties.html", users= users )
+    return render_template("properties.html", property= users )
    
 
 @app.route('/property/<propertyid>')
 def user_pro(propertyid):
-    userpro= UserProperty.query.get(propertyid)
-    return render_template("userproperty.html", property= userpro)
+    userpro= UserProperty.query.filter_by(id=propertyid).first()
+    return render_template("userproperty.html", userpro= userpro)
 
 ###
 # The functions below should be applicable to all Flask apps.
