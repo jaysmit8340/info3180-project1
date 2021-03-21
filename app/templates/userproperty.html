@@ -5,11 +5,12 @@
 <br>
 <h1 class='page-header'>Property</h1>
 {% include "flash_messages.html"%}
-<div class="card">
+<div class="card" id="cards">
 <div class="row">
     <div class="column">
-     <img class="img" src = "{{url_for('get_image',filename=userpro.photo_name)}}">
+     <img class="img1" src = "{{url_for('get_image',filename=userpro.photo_name)}}">
     </div>
+
     
     <div class="column1">
         <h3 class="card-tit">{{userpro.title}}</h3>
@@ -24,14 +25,16 @@
     <div class="descrip">
     <p class="card-tex">{{userpro.desc}}</p>
     </div>
-    <div class="icon1">
-    <p ><img class="iconp" src="{{url_for('static', filename='bed.png')}}"/>{{userpro.numofBed}} Bedroom</p>
+    <div class="row">
+        <div class="col-md-3">
+    <p ><img class="iconp" src="{{url_for('static', filename='bed.png')}}"/>{{userpro.numOfBed}} Bedroom</p>
     </div>
-    <div class="icon2">
-        <p ><img class="iconp" src="{{url_for('static', filename='bath.png')}}"/>{{userpro.numofBath}} Bathroom</p>
+    <div class="col-md-3">
+        <p ><img class="iconp" src="{{url_for('static', filename='bath.png')}}"/>{{userpro.numOfBath}} Bathroom</p>
         </div>
+    </div>
     <div class="icon3">
-            <p ><img class="iconp" src="{{url_for('static', filename='loc.png')}}"/>{{userpro.location}} Location</p>
+            <p ><img class="iconp" src="{{url_for('static', filename='loc.png')}}"/>{{userpro.location}}</p>
             </div>
     
     <button class="btn">Email Realtor</button>

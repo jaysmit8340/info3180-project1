@@ -3,7 +3,7 @@ from . import db
 
 class UserProperty(db.Model):
     
-    __tablename__ = 'user_property'
+    __tablename__ = 'user_proper'
 
     id = db.Column(db.Integer, primary_key=True, unique=True)
     title = db.Column(db.String(80))

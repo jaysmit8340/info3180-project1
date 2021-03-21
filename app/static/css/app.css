@@ -4,12 +4,13 @@ body {
 button{
     background-color: blue;
     color: white;
+    
    
    
 }
 
 .viewbutton{
-    background-color: #00b386;
+    background-color: #14b7a6;
     color: white;
     font-size: 15px;
     padding:9px;
@@ -18,6 +19,11 @@ button{
     
     
   
+}
+.btn{
+    background-color:#14b7a6;
+    color: white;
+    margin-bottom:42px;
 }
 a{
     align-items: center;
@@ -37,7 +43,7 @@ a{
 }
 .iconp{
     height: 17px;
-    width:15px;
+    width:12px;
     margin-right: 8px;
     margin-left: 8px;
     
@@ -52,34 +58,75 @@ a{
     font-size: 10px;
     
 }
-img{
+.img2{
     
     width: 100%;
     height: 80%;
    
 }
+
 .card-tit{
     font-weight: bold;
+    margin-top:15px;
 }
 
 
-.row{
-    display:flex;
-    padding: 5px;
+.descrip{
+    margin-top:15px;
 }
 
-.column {
-    flex: 50%;
-    padding: 6px;
-    height: 100%; 
+.img1{
+    width:450px;
+    height:315px;
+
+}
+
    
+ 
+.navbar{
+    background-color: #14b7a6;
+}  
+   
+
+.column1{
+    
+    margin-left:25px ;
+    width:50%;
+    
+    
+
+}
+
+.top{
+      display:flex;
+      margin-top:15px;
+      
   }
-  .column1{
-    flex: 50%;
-    padding: 4px;
-    height: 100%;
+  .icon3{
+      margin-top:10px;
+  }
+.prop{
+      margin-left: 12px;
+  }
+.pri{
+    background-color: blue;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    width:15%;
+    font-size: 12px;
+
 
   }
-  * {
-    box-sizing: border-box;
-  }
+   .prop{
+    background-color: #f9be26;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    width:11%;
+    font-size: 11px;
+   }
+  
+#cards{
+    width:97%;
+}
