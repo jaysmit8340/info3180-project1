@@ -5,15 +5,15 @@ class UserProperty(db.Model):
     
     __tablename__ = 'user_proper'
 
-    id = db.Column(db.Integer, primary_key=True, unique=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(80))
     desc = db.Column(db.String(255))
-    numOfBed= db.Column(db.String(80))
-    numOfBath = db.Column(db.String(30))
+    numOfBed= db.Column(db.INTEGER)
+    numOfBath = db.Column(db.INTEGER)
     pric = db.Column(db.String(80))
     proptype = db.Column(db.String(29))
     location = db.Column(db.String(225))
-    photo_name=db.Column(db.String(225), index=True)
+    photo_name=db.Column(db.String(225))
     
     
     

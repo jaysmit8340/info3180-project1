@@ -1,132 +1,118 @@
 body {
     padding-top: 50px;
 }
-button{
+
+button {
     background-color: blue;
     color: white;
-    
-   
-   
 }
 
-.viewbutton{
+.viewbutton {
     background-color: #14b7a6;
     color: white;
     font-size: 15px;
-    padding:9px;
-    text-align:center ;
-   
-    
-    
-  
+    padding: 9px;
+    text-align: center;
 }
-.btn{
-    background-color:#14b7a6;
+
+.btn {
+    background-color: #14b7a6;
     color: white;
-    margin-bottom:42px;
+    margin-bottom: 42px;
 }
-a{
+
+a {
     align-items: center;
 }
 
-
-.grid_layout1{
+.grid_layout1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
-    
 }
-.card-title{
+
+.card-title {
     font-weight: bold;
     margin-left: 8px;
-    
 }
-.iconp{
+
+.iconp {
     height: 17px;
-    width:12px;
+    width: 12px;
     margin-right: 8px;
     margin-left: 8px;
-    
 }
-.prices{
-    background-color: blue;
+
+.prices {
+    background-color: #61a5fb;
+    border-color: #61a5fb;
     color: white;
-    border-radius: 15px;
-    width:19%;
-    padding:6px;
-    margin-left:8px ;
+    border-radius: 25px;
+    max-width: max-content;
+    padding: 0.375rem 0.75rem;
+    margin-left: 8px;
     font-size: 10px;
-    
 }
-.img2{
-    
+
+.img2 {
     width: 100%;
     height: 80%;
-   
 }
 
-.card-tit{
+.card-tit {
     font-weight: bold;
-    margin-top:15px;
+    margin-top: 15px;
 }
 
-
-.descrip{
-    margin-top:15px;
+.descrip {
+    margin-top: 15px;
 }
 
-.img1{
-    width:450px;
-    height:315px;
-
+.img1 {
+    width: 450px;
+    height: 315px;
 }
 
-   
- 
-.navbar{
+.navbar {
     background-color: #14b7a6;
-}  
-   
-
-.column1{
-    
-    margin-left:25px ;
-    width:50%;
-    
-    
-
 }
 
-.top{
-      display:flex;
-      margin-top:15px;
-      
-  }
-  .icon3{
-      margin-top:10px;
-  }
-.prop{
-      margin-left: 12px;
-  }
-.pri{
+.column1 {
+    margin-left: 25px;
+    width: 50%;
+}
+
+.top {
+    display: flex;
+    margin-top: 15px;
+}
+
+.icon3 {
+    margin-top: 10px;
+}
+
+.prop {
+    margin-left: 12px;
+}
+
+.pri {
     background-color: blue;
     color: white;
     text-align: center;
     border-radius: 8px;
-    width:15%;
+    width: 15%;
     font-size: 12px;
+}
 
-
-  }
-   .prop{
+.prop {
     background-color: #f9be26;
     color: white;
     text-align: center;
     border-radius: 8px;
-    width:11%;
+    width: 11%;
     font-size: 11px;
-   }
-  
-#cards{
-    width:97%;
+}
+
+#cards {
+    width: 97%;
 }
