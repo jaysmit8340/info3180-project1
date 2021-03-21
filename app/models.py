@@ -13,8 +13,7 @@ class UserProperty(db.Model):
     pric = db.Column(db.String(80))
     proptype = db.Column(db.String(29))
     location = db.Column(db.String(225))
-    photo_name=db.Column(db.String(225))
-    
+    photo_name=db.Column(db.String(225))    
     
     
     def __init__(self, title, desc, numOfBed, numOfBath, pric, proptype, location, photo_name):
